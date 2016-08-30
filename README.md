@@ -14,7 +14,7 @@ In this lesson, we'll create functions that contain multiple arguments.
 
 ## Functions and Arguments
 
-We create functions to keep self-contained chunks of code in one place, and call them as often as we want.Functions can take in an argument and so we can generalize its behavior a bit. Let's see how functions can be even _more_ useful.
+We create functions to keep self-contained chunks of code in one place, and call them as often as we want. Functions can take in an argument and so we can generalize its behavior a bit. Let's see how functions can be even _more_ useful.
 
 Let's review how you create functions.
 
