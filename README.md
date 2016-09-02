@@ -139,7 +139,7 @@ planetDescription(planet, numberOfMoons: moons)
 
 Now that's impressive! Play around with functions that take multiple arguments a while until you are really comfortable with them. There are six more planets in our solar system that you can use in your own examples!
 
-# Internal vs External Parameter Names
+# External vs Local Parameter Names
 
 Function parameters have both an external parameter name and a local parameter name. An external parameter name is used to label arguments passed to a function call. A local parameter name is used in the implementation of the function. What does that mean?
 
