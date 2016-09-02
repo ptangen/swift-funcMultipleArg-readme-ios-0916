@@ -139,6 +139,123 @@ planetDescription(planet, numberOfMoons: moons)
 
 Now that's impressive! Play around with functions that take multiple arguments a while until you are really comfortable with them. There are six more planets in our solar system that you can use in your own examples!
 
+# Internal vs External Parameter Names
+
+Function parameters have both an external parameter name and a local parameter name. An external parameter name is used to label arguments passed to a function call. A local parameter name is used in the implementation of the function. What does that mean?
+
+```swift
+func theBestFunction(firstParameterName: String, secondParameterName: String) {
+    
+    // function body here
+    
+    // firstParameterName and secondParameterName refer to the argument values for the first and second parameters
+    
+}
+```
+
+```swift
+theBestFunction("Brick", secondParameterName: "Oven")
+```
+
+The name of this function is `theBestFunction` and it takes in two arguments, both of which are of type `String`. If you notice that when we call the function, the first parameter omits its external name, and the second (and any subsequent) parameters use their local name as their external name.
+
+If I were to describe this function to you, I would type it out like this:
+
+`theBestFunction(_:secondParameterName)`
+
+The reason we _describe_ the function like that, is because when writing out our function to someone in text, we write out the name followed by `( )` -- within those parenthesis are all the external names followed by a colon `:`. How do we denote that there isn't an external name? We do so with the `_` underbar. 
+
+The local name of an argument is how you refer to the argument within the implementation of your function.
+
+**Name of function**  
+`theBestFunction`
+
+**First Argument**  
+External Name = `_`  
+Local Name = `firstParameterName` 
+
+**Second Argument**  
+External Name = `secondParameterName`  
+Local Name = `secondParameterName`
+
+---
+
+What if you wanted to have an External Name for the first argument, we can fix that problem like so:
+
+```swift
+func theBestFunction(externalNameForFirst firstParameterName: String, secondParameterName: String) {
+    
+    print(firstParameterName)
+    print(secondParameterName)
+    
+}
+```
+
+```swift
+theBestFunction(externalNameForFirst: "Brick", secondParameterName: "Oven")
+
+/* Prints
+ Brick
+ Oven 
+ */
+ ```
+ 
+Lets run through our breakdown again, first typing out the description of this function:
+
+`theBestFunction(externalNameForFirst:secondParameterName:)`
+
+**Name of function**  
+`theBestFunction`
+
+**First Argument**  
+External Name = `externalNameForFirst`  
+Local Name = `firstParameterName` 
+
+**Second Argument**  
+External Name = `secondParameterName`  
+Local Name = `secondParameterName`
+
+---
+
+What if we wanted to create a function with NO External Names, can we do that? Yes.
+
+```swift
+func theBestFunction(firstParameterName: String, _ secondParameterName: String, _ thirdParameterName: String, _ fourthParameterName: String) {
+    
+    print(firstParameterName)
+    print(secondParameterName)
+    print(thirdParameterName)
+    print(fourthParameterName)
+    
+}
+```
+
+If we wanted to type out the description of this function, it would look like this:
+
+`theBestFunction(_:_:_:_:)`
+
+When typing out the description, you only include the external names . The first argument always defaults to having no external name. The second and subsequent arguments, if we wanted for them to have NO external name, we have to add the _ before the local name. We always need to have a local name because we need to be able to refer to that argument within the implementation of our function.
+
+**Name of function**  
+`theBestFunction`
+
+**First Argument**  
+External Name = `_`  
+Local Name = `firstParameterName` 
+
+**Second Argument**  
+External Name = `_`  
+Local Name = `secondParameterName`
+
+**Third Argument**  
+External Name = `_`  
+Local Name = `thirdParameterName` 
+
+**Fourth Argument**  
+External Name = `_`  
+Local Name = `fourthParameterName`
+
+
 <a href='https://learn.co/lessons/FunctionsMultipleArg' data-visibility='hidden'>View this lesson on Learn.co</a>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/swift-funcMultipleArg-readme'>Functions and Multiple Arguments</a> on Learn.co and start learning to code for free.</p>
