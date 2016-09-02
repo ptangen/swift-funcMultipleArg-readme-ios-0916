@@ -236,6 +236,17 @@ If we wanted to type out the description of this function, it would look like th
 
 When typing out the description, you only include the external names . The first argument always defaults to having no external name. The second and subsequent arguments, if we wanted for them to have NO external name, we have to add the _ before the local name. We always need to have a local name because we need to be able to refer to that argument within the implementation of our function.
 
+```swift
+theBestFunction("Hello", "To", "You", "Marty")
+
+/* Prints
+ Hello
+ To
+ You
+ Marty
+ */
+```
+
 **Name of function**  
 `theBestFunction`
 
